@@ -205,6 +205,11 @@ WantedBy=multi-user.target
 ::: tip Redis on CentOS
 If you are using CentOS, you will need to replace `redis-server.service` with `redis.service` at the `After=` line in order to ensure `redis` starts before the queue worker.
 :::
+::: tip NGINX/Apache on CentOS
+If you are using CentOS, you will need to replace `www-data` with `apache` at the `User=` & `Group=` line in order to ensure the user exists per the OS.
+
+If you are using CentOS, you will need to replace `www-data` with `nginx` at the `User=` & `Group=` line in order to ensure the user exists per the OS.
+:::
 
 ::: tip
 If you are not using `redis` for anything you should remove the `After=` line, otherwise you will encounter errors
